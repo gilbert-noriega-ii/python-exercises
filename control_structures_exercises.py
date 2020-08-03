@@ -186,3 +186,86 @@ for n in range(1,101):
 # Ask if the user wants to continue.
 # Assume that the user will enter valid data.
 # Only continue if the user agrees to.
+powers = int(input("What number would you like to go up to?: "))
+b = 1
+print("number   squared     cubed")
+while b <= powers:
+    print(f"{b}         {b**2}            {b**3}")
+    b += 1
+
+#5)Convert given number grades into letter grades.
+# Prompt the user for a numerical grade from 0 to 100.
+# Display the corresponding letter grade.
+# Prompt the user to continue.
+# Assume that the user will enter valid integers for the grades.
+# The application should only continue if the user agrees to.
+
+user = 'y'
+while user.lower() == 'y':
+    grade = int(input('Enter a grade: '))
+    if grade >= 99 and grade <= 100:
+        print(f'{grade} is an A+')
+    elif grade >= 90:
+        print(f'{grade} is an A')
+    elif grade >= 88:
+        print(f'{grade} is an A-')
+    elif grade >= 86:
+        print(f'{grade} is a B+')
+    elif grade >= 82:
+        print(f'{grade} is a B')
+    elif grade >= 80:
+        print(f'{grade} is a B-')
+    elif grade >= 78:
+        print(f'{grade} is a C+')
+    elif grade >= 69:
+        print(f'{grade} is a C')
+    elif grade >= 67:
+        print(f'{grade} is a C-')
+    elif grade >= 65:
+        print(f'{grade} is a D+')
+    elif grade >= 62:
+        print(f'{grade} is a D')
+    elif grade >= 60:
+        print(f'{grade} is a D-')
+    elif grade <= 59:
+        print(f'{grade} is an F')
+    else:
+        print('you did not enter a grade between 1-100')
+    user = input('Would you like to continue? [y/n] ')
+
+#6)Create a list of dictionaries where each dictionary represents a book 
+#that you have read. Each dictionary in the list should have the 
+#keys title, author, and genre. 
+#Loop through the list and print out information about each book.
+books = [
+    {
+        "title": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "genre": "Southern Gothic"
+    },
+    {
+        "title": "Pride and Prejudice",
+        "author": "Jane Austen",
+        "genre": "Romance"
+    },
+    {
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "genre": "Trajedy"
+    },
+    {
+        "title": "1984",
+        "author": "George Orwell",
+        "genre": "Science Fiction"
+    }
+]
+for book in books:
+    print(book)
+
+#6a)Prompt the user to enter a genre, 
+#then loop through your books list and print out 
+#the titles of all the books in that genre.
+genre_search = input("What genre do you want to search for?: ")
+for book in books:
+    if genre_search == book['genre']:
+        print(book['title'])
