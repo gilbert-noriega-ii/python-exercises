@@ -138,3 +138,35 @@ def normalize_name(name):
 # cumulative_sum([1, 2, 3, 4]) returns [1, 3, 6, 10]
 def cumulative_sum(number_list):
     return [sum(number_list[:i+1]) for i in range(len(number_list))]
+
+#Bonus 1A) Create a function named twelveto24. 
+#It should accept a string in the format 10:45am or 4:30pm 
+#and return a string that is the representation of the time 
+#in a 24-hour format. 
+def twelveto24(time):
+    assert type(time) == str, "Please enter your time as a string"
+    if time[-2:] == 'am' and time[:2] == '12':
+        return '00' + time[2:-2]
+    elif time[-2:] == 'am' and (time[:2] == '10' or time[:2] == '11'):
+        return time[:-2]
+    elif time[-2:] == 'am':
+        return '0' + time[:-2]
+    elif time[-2:] == 'pm' and time[:2] == '12':
+        return time[:-2]
+    elif time[-2:] == 'pm' and (time[:2] == '10' or time[:2] == '11'):
+        return str(int(time[:2]) + 12) + time[2:-2]
+    else:
+        return str(int(time[:1]) + 12) + ":" + time[2:-2]
+
+#Bonus 1B) write a function that does the opposite.
+def twentyfourto12(time):
+    if time[:2] == '00':
+        return '12:' + time[-2:] + 'am'
+    elif int(time[:2]) < 10:
+        return time[1:] + 'am'
+    elif int(time[:2]) >=10 and int(time[:2]) <=11:
+        return time + 'am'
+    elif int(time[:2]) == 12:
+        return time + 'pm'
+    else:
+        return str(int(time[:2]) - 12) + ":" + time[-2:] + 'pm'
