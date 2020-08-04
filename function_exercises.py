@@ -49,7 +49,7 @@ def calculate_tip(tip_percent, bill_total):
     assert type(tip_percent) == float, "Please enter a tip percentage as a float variable"
     assert type(bill_total) == float, "Please enter the bill total as a float variable"
     if tip_percent >= 0 and tip_percent <= 1:
-        return bill_total + bill_total*tip_percent
+        return bill_total*tip_percent
     else:
         print("Enter the tip percentage as a number between 0 and 1")
 
@@ -65,6 +65,10 @@ def apply_discount(original_price, discount):
     else:
         print("Enter the discount as a number between 0 and 1")
         
+
+#Redo number 7
+
+
 #7Define a function named handle_commas. 
 #It should accept a string that is a number 
 #that contains commas in it as input, 
@@ -73,7 +77,7 @@ def handle_commas(number):
     assert type(number) == str, "Please enter a string that is a number"
     commas = ","
     if number.isdecimal() == False:
-        print("Please enter only a string containing numbers")
+        print("Please enter a string containing only numbers")
     else:
         for char in commas:
             number = number.replace(char,"")
@@ -144,7 +148,6 @@ def cumulative_sum(number_list):
 #and return a string that is the representation of the time 
 #in a 24-hour format. 
 def twelveto24(time):
-    assert type(time) == str, "Please enter your time as a string"
     if time[-2:] == 'am' and time[:2] == '12':
         return '00' + time[2:-2]
     elif time[-2:] == 'am' and (time[:2] == '10' or time[:2] == '11'):
