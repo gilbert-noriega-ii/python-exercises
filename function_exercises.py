@@ -143,6 +143,14 @@ def normalize_name(name):
 def cumulative_sum(number_list):
     return [sum(number_list[:i+1]) for i in range(len(number_list))]
 
+# def cumulative_sum(num_list)
+#     csum = []
+#     count = 0
+#     for number in num_list:
+#         count = number + count
+#         csum.append(count)
+#     return csum
+
 #Bonus 1A) Create a function named twelveto24. 
 #It should accept a string in the format 10:45am or 4:30pm 
 #and return a string that is the representation of the time 
@@ -173,3 +181,6 @@ def twentyfourto12(time):
         return time + 'pm'
     else:
         return str(int(time[:2]) - 12) + ":" + time[-2:] + 'pm'
+
+#Bonus2)
+

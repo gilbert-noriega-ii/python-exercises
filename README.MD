@@ -1,1 +1,1 @@
-#this is the repo for my python exercises
+#this is for my pyhton repo
