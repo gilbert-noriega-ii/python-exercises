@@ -37,13 +37,14 @@ data = json.load(prof) #storing the loading of json file command as variable dat
 #Total number of users
 number_of_users = len([profile['_id'] for profile in data]) #counting number of profiles in dictionary called data
 print(f'The total number of users is {number_of_users}.') #printing results
+#len(data)
 
 #Number of active users
-number_of_active_users = len([profile['isActive'] for profile in data if profile['isActive'] == True]) ##counting number of profiles in dictionary called data if isActive equals true
+number_of_active_users = len([profile for profile in data if profile['isActive'] == True]) ##counting number of profiles in dictionary called data if isActive equals true
 print(f'The total number of active users is {number_of_active_users}.') # print our results
 
 #Number of inactive users
-number_of_inactive_users = len([profile['isActive'] for profile in data if profile['isActive'] == False]) ##counting number of profiles in dictionary called data if isActive equals true
+number_of_inactive_users = len([profile for profile in data if profile['isActive'] == False]) ##counting number of profiles in dictionary called data if isActive equals true
 print(f'The total number of active users is {number_of_inactive_users}.') # print our results
 
 #Grand total of balances for all users
@@ -81,3 +82,9 @@ print(f"The least common favorite fruit is {min(fruit_counts)}.")
 unread_messages = [int(profile['greeting'].lower().strip("abcdefghijklmonpqrstuvwxyz!,. ")) for profile in data if 'unread' in profile['greeting']]
 total_messages = sum(unread_messages) 
 print(f'There are {total_messages} unread messages for all users.')
+
+# def extract_digits(s):
+#     return ''.join([c for c in s if c.isdigit()])
+
+# n_unread_messages = [extract_digits(profile['greeting']) for profile in profiles]
+# sum([int(message) for message in n_unread_messages])
