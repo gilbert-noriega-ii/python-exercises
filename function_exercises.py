@@ -64,10 +64,6 @@ def apply_discount(original_price, discount):
         return original_price - original_price*discount
     else:
         print("Enter the discount as a number between 0 and 1")
-        
-
-#Redo number 7
-
 
 #7Define a function named handle_commas. 
 #It should accept a string that is a number 
@@ -76,13 +72,10 @@ def apply_discount(original_price, discount):
 def handle_commas(number):
     assert type(number) == str, "Please enter a string that is a number"
     commas = ","
-    if number.isdecimal() == False:
-        print("Please enter a string containing only numbers")
-    else:
-        for char in commas:
-            number = number.replace(char,"")
-            number = float(number)
-        return number
+    for char in commas:
+        number = number.replace(char,"")
+        number = float(number)
+    return number
 
 #8)Define a function named get_letter_grade. 
 #It should accept a number and 
