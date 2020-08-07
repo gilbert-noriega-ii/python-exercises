@@ -94,21 +94,11 @@ while l > 0:
 #2b)For Loops
 #Write some code that prompts the user for a number,
 #then shows a multiplication table up through 10 for that number.
-number = int(input("Choose a number from 1-10: "))
-if number > 10 or number < 1:
-    print("That is not a number from 1-10!")
-else:
-    
-    print(f"{number} x 1 = {number1}")
-    print(f"{number} x 2 = {number * 2}")
-    print(f"{number} x 3 = {number * 3}")
-    print(f"{number} x 4 = {number * 4}")
-    print(f"{number} x 5 = {number * 5}")
-    print(f"{number} x 6 = {number * 6}") 
-    print(f"{number} x 7 = {number * 7}")
-    print(f"{number} x 8 = {number * 8}")
-    print(f"{number} x 9 = {number * 9}")      
-    print(f"{number} x 10 = {number * 10}")
+number = int(input("Please input a number"))
+
+for i in range(1, 11):
+    result = number * i
+    print(f"{number} x {i} = {result}")
 
 #Create a for loop that uses print to create the output shown below.
 for p in range(10):
@@ -131,6 +121,35 @@ for n in range(50):
     elif odd_number > 50 or odd_number < 1:
         print("Invalid Number")
         break
+print(f"Number to skip is {user_number}")
+print() # prints an extra new line
+
+#this is the correct solution to above
+def get_odd_number_between_1_and_50():
+    while True:
+        user_number = input("Please input a number between 1 and 50\n")
+
+        if user_number.isdigit():
+            user_number = int(user_number)
+
+            large_enough = user_number > 1
+            small_enough = user_number < 50
+            odd = user_number % 2 != 0
+
+            if large_enough and small_enough and odd:
+                break
+            else:
+                print("Your input must be less than 50 and odd and greater than 1\n")
+        else:
+            print("Your input must be numerals, please.\n")
+
+    return user_number
+
+for i in range(1, 50, 2):
+    if i == user_number:
+        print(f"Yikes! Skipping number: {i}")
+        continue
+    print(f"Here is an odd number: {i}")
 
 #2d)The input function can be used to prompt for input 
 #and use that input in your python code. 
